@@ -5,7 +5,6 @@ if(isBuildModule.toBoolean()){
     apply plugin: 'org.jetbrains.kotlin.android'
 }else{
     apply plugin: 'kotlin-kapt'
-    apply plugin: 'kotlin-parcelize'
     apply plugin: 'com.android.application'
     apply plugin: 'org.jetbrains.kotlin.android'
 }
@@ -16,9 +15,12 @@ android {
 
     defaultConfig {
         //通过是不是组件单独运行来判断
-//        applicationId "com.fhz.module_main"
-
+        if(!isBuildModule.toBoolean()) {
+            applicationId "com.fhz.module_main"
+        }
     }
+    //统一资源前缀，规范资源引用
+    resourcePrefix "main_"
 }
 
 dependencies {

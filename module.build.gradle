@@ -10,6 +10,25 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    sourceSets {
+        main{
+            //jni库统一放在libs目录下
+//            jniLibs.srcDir = ['libs']
+            if (!isBuildModule.toBoolean()){
+                //单独运行
+                manifest.srcFile 'src/main/alone/AndroidManifest.xml'
+            }
+            else {
+                //合并到宿主中
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                resources{
+                    //正式版本时.剔除debug文件夹下的所有调式文件
+                    exclude 'src/debug/*'
+                }
+            }
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false

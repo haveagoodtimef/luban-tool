@@ -24,6 +24,8 @@ android {
 }
 
 dependencies {
-
-api project(path: ':library-base')
+    api project(path: ':library-base')
+    kapt LuBanDependencies.arouterCompiler
+    implementation LuBanDependencies.baseRecyclerViewAdapterHelper
+//    implementation LuBanDependencies.circleimageview
 }

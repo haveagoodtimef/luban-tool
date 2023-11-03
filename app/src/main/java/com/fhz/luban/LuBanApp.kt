@@ -1,6 +1,7 @@
 package com.fhz.luban
 
 import android.app.Application
+import com.didichuxing.doraemonkit.DoKit
 
 /**
  * 时间:2023/11/2
@@ -12,6 +13,10 @@ class LuBanApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        DoKit.Builder(this)
+            .productId("bc5572f4d8f739a59ba5188010b6a1da")
+            .build()
 
     }
 }

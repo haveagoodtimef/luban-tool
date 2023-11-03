@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-kapt'
+    id 'org.jetbrains.kotlin.android'
+}
+apply from: "../module.build.gradle"
+android {
+    namespace 'com.fhz.library_http'
+}
+
+dependencies {
+    api(LuBanDependencies.converterGson)
+    api(LuBanDependencies.retrofit)
+    api(LuBanDependencies.loggingInterceptor)
+    api(LuBanDependencies.gson)
+}

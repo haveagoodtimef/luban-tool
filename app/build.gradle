@@ -13,6 +13,8 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':module-main')
+    implementation project(path: ':module-big-picture')
+    kapt LuBanDependencies.arouterCompiler
 
-implementation project(path: ':module-main')
 }

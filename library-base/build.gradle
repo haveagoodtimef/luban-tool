@@ -11,4 +11,8 @@ android {
 
 dependencies {
     api project(path: ':library-common')
+    api project(path: ':library-http')
+    api (LuBanDependencies.arouter)
+
+    kapt LuBanDependencies.arouterCompiler
 }

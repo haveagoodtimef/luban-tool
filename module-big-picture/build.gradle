@@ -1,0 +1,30 @@
+if(isBuildModule.toBoolean()){
+    apply plugin: 'com.android.library'
+    apply plugin: 'kotlin-kapt'
+    apply plugin: 'kotlin-parcelize'
+    apply plugin: 'org.jetbrains.kotlin.android'
+}else{
+    apply plugin: 'kotlin-kapt'
+    apply plugin: 'com.android.application'
+    apply plugin: 'org.jetbrains.kotlin.android'
+}
+
+apply from: "../module.build.gradle"
+
+android {
+    namespace 'com.fhz.module_big_picture'
+
+    defaultConfig {
+        if(!isBuildModule.toBoolean()) {
+            applicationId "com.fhz.module_big_picture"
+        }
+    }
+
+    //统一资源前缀，规范资源引用
+    resourcePrefix "bpic_"
+}
+
+dependencies {
+    api project(path: ':library-base')
+    kapt LuBanDependencies.arouterCompiler
+}

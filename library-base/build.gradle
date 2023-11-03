@@ -1,0 +1,14 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'org.jetbrains.kotlin.android'
+}
+apply from: "../module.build.gradle"
+android {
+    namespace 'com.fhz.library_base'
+}
+
+dependencies {
+    api project(path: ':library-common')
+}

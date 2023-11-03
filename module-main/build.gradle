@@ -1,0 +1,27 @@
+if(isBuildModule.toBoolean()){
+    apply plugin: 'com.android.library'
+    apply plugin: 'kotlin-kapt'
+    apply plugin: 'kotlin-parcelize'
+    apply plugin: 'org.jetbrains.kotlin.android'
+}else{
+    apply plugin: 'kotlin-kapt'
+    apply plugin: 'kotlin-parcelize'
+    apply plugin: 'com.android.application'
+    apply plugin: 'org.jetbrains.kotlin.android'
+}
+
+apply from: "../module.build.gradle"
+android {
+    namespace 'com.fhz.module_main'
+
+    defaultConfig {
+        //通过是不是组件单独运行来判断
+//        applicationId "com.fhz.module_main"
+
+    }
+}
+
+dependencies {
+
+api project(path: ':library-base')
+}

@@ -1,0 +1,18 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'org.jetbrains.kotlin.android'
+}
+apply from: "../module.build.gradle"
+android {
+    namespace 'com.fhz.luban'
+    defaultConfig {
+        applicationId "com.fhz.luban"
+    }
+}
+
+dependencies {
+
+implementation project(path: ':module-main')
+}

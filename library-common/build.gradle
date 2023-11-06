@@ -7,6 +7,10 @@ plugins {
 apply from: "../module.build.gradle"
 android {
     namespace 'com.fhz.library_common'
+
+
+
+
 }
 
 dependencies {
@@ -26,8 +30,6 @@ dependencies {
     api(LuBanDependencies.viewmodelKtx)
     api(LuBanDependencies.fragmentKtx)
 //    api(LuBanDependencies.hilt)
-
-
 
 
 }

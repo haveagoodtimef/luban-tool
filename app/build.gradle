@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'org.jetbrains.kotlin.android'
 }
+apply plugin: 'com.google.dagger.hilt.android'
 apply from: "../module.build.gradle"
 android {
     namespace 'com.fhz.luban'
@@ -16,5 +17,8 @@ dependencies {
     implementation project(path: ':module-main')
     implementation project(path: ':module-big-picture')
     kapt LuBanDependencies.arouterCompiler
+
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
 
 }

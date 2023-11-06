@@ -3,17 +3,22 @@ package com.fhz.module_main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.fhz.library_base.path.MAIN_ACTIVITY
 import com.fhz.module_main.adapter.PictureAdatper
 import com.fhz.module_main.databinding.ActivityMainBinding
 import com.fhz.module_main.viewmodel.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 /**
  * 主要页面的布局,使用arouter进行组件之间的跳转
  */
 @Route(path = MAIN_ACTIVITY)
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var pictureAdatper: PictureAdatper
@@ -32,5 +37,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.pictureRecycleView.adapter = pictureAdatper
         binding.pictureRecycleView.layoutManager = GridLayoutManager(this,4)
+
+        lifecycleScope.launch{
+            //Lifecycle.Event.ON_RESUME
+            val banners = viewModel.getBanners()
+            println(banners.data.list.size)
+        }
+
     }
 }

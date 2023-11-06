@@ -1,4 +1,4 @@
-package com.fhz.module_main.entity
+package com.fhz.library_http.utils.entity
 
 /**
  * 时间:2023/11/3

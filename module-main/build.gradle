@@ -8,6 +8,7 @@ if(isBuildModule.toBoolean()){
     apply plugin: 'com.android.application'
     apply plugin: 'org.jetbrains.kotlin.android'
 }
+apply plugin: 'com.google.dagger.hilt.android'
 
 apply from: "../module.build.gradle"
 android {
@@ -28,4 +29,6 @@ dependencies {
     kapt LuBanDependencies.arouterCompiler
     implementation LuBanDependencies.baseRecyclerViewAdapterHelper
 //    implementation LuBanDependencies.circleimageview
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
 }

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.fhz.module_main.databinding.MainRecycleViewPictureAdapterLayoutBinding
-import com.fhz.module_main.entity.Picture
+import com.fhz.library_http.utils.entity.Picture
 
 /**
  * 时间:2023/11/3

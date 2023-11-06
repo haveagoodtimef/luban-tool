@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-kapt'
     id 'org.jetbrains.kotlin.android'
 }
+apply plugin: 'com.google.dagger.hilt.android'
 apply from: "../module.build.gradle"
 android {
     namespace 'com.fhz.library_http'
@@ -13,4 +14,6 @@ dependencies {
     api(LuBanDependencies.retrofit)
     api(LuBanDependencies.loggingInterceptor)
     api(LuBanDependencies.gson)
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
 }

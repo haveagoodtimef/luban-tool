@@ -26,6 +26,8 @@ object HttpManager {
             .build()
     }
 
+    
+
     private fun getClient(): OkHttpClient {
         return  OkHttpClient.Builder()
             //.retryOnConnectionFailure(true)//超时重连，默认1次，多次使用拦截器
